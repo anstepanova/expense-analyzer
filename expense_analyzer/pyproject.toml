@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "expense-analyzer"
+version = "0.1.0"
+description = ""
+authors = ["Anastasia Stepanova <nastasija.stepanova@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = {extras = ["all"], version = "^0.104.0"}
+alembic = "^1.12.1"
+pylint = {extras = ["spelling"], version = "^3.0.2"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
