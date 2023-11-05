@@ -7,10 +7,19 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-fastapi = {extras = ["all"], version = "^0.104.0"}
+fastapi = {extras = ["all"], version = "^0.104.1"}
 alembic = "^1.12.1"
-pylint = {extras = ["spelling"], version = "^3.0.2"}
 
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+flake8 = "^6.1.0"
+docformatter = "^1.7.5"
+isort = "^5.12.0"
+bandit = "^1.7.5"
+autoflake = "^2.2.1"
+add-trailing-comma = "^3.1.0"
+pylint = {extras = ["spelling"], version = "^3.0.2"}
 
 [build-system]
 requires = ["poetry-core"]

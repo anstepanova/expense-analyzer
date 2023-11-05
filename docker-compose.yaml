@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  db:
+    env_file: ./docker/.env
+    image: postgres:16
+    container_name: expense-analyzer-db
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./docker/db/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+  expense-analyzer:
+    env_file: ./docker/.env
+    environment:
+      - APP_PRIVATE_PORT
+      - APP_PUBLIC_PORT
+    build:
+      dockerfile: ./docker/api/Dockerfile
+    image: python:3.12-alpine
+    container_name: expense-analyzer-api
+    ports:
+      - 127.0.0.1:8080:8080
+    depends_on:
+      - db
+volumes:
+  db_data:
