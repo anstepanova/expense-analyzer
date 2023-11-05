@@ -1,5 +1,5 @@
+"""Server endpoint."""
 import uvicorn
-
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -7,9 +7,12 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
+    """Example get method.
+
+    return: example dict.
+    """
     return {"message": "Hello World"}
 
-x = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
 
 if __name__ == "__main__":
     uvicorn.run(
