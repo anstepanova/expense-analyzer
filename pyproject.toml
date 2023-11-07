@@ -20,7 +20,13 @@ bandit = "^1.7.5"
 autoflake = "^2.2.1"
 add-trailing-comma = "^3.1.0"
 pylint = {extras = ["spelling"], version = "^3.0.2"}
+pytest = "^7.4.3"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+tests = ["B201", "B301"]
+skips = ["B101", "B601"]
