@@ -25,7 +25,7 @@ jobs:
         python-version: "3.12"
     - name: Install poetry
       run: |
-        curl -sSL https://install.python-poetry.org | POETRY_HOME=/etc/poetry python3 -
+        sudo curl -sSL https://install.python-poetry.org | POETRY_HOME=/etc/poetry python3 -
 
     - name: Install dependencies
       run: |
