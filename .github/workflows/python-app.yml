@@ -26,7 +26,7 @@ jobs:
     - name: Install poetry
       run: |
         sudo curl -sSL https://install.python-poetry.org | POETRY_HOME=~/poetry python3 - |
-        export PATH="/home/runner/poetry/bin:$PATH
+        export PATH="/home/runner/poetry/bin:$PATH"
 
     - name: Install dependencies
       run: |
