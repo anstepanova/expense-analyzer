@@ -26,12 +26,12 @@ jobs:
     - name: Install poetry
       run: |
         sudo curl -sSL https://install.python-poetry.org | POETRY_HOME=~/poetry python3 -
-    - name: Poetry version
-      run: |
-        ls /home/runner/poetry/bin -al
+#    - name: Poetry version
+#      run: |
+#        ls /home/runner/poetry/bin/poetry -al
     - name: Install dependencies
       run: |
-        /home/runner/poetry/bin install --with dev
+        /home/runner/poetry/bin/poetry install --with dev
     - name: Test with pytest
       run: |
-         /home/runner/poetry/bin run pytest
+         /home/runner/poetry/bin/poetry run pytest
