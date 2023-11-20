@@ -2,10 +2,11 @@
 import asyncio
 
 import uvicorn
-from config import app_setting
 from constants import DbConstants
 from fastapi import FastAPI
 from sqlalchemy.ext.asyncio import async_sessionmaker
+
+from expense_analyzer.config import app_setting
 
 app = FastAPI()
 
