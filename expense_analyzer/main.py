@@ -1,5 +1,6 @@
 """Server endpoint."""
 import uvicorn
+from config import app_setting
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -17,5 +18,5 @@ async def root():
 if __name__ == "__main__":
     uvicorn.run(
         app,
-        host="127.0.0.1", port=8080,
+        host=app_setting.host.exploded, port=app_setting.port,
     )

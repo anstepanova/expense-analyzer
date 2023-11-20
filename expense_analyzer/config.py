@@ -29,7 +29,7 @@ class EnvSettings(BaseSettings):
     db_password: SecretStr
     db_user: str
     db_name: str
-    app_port: str = Field(validation_alias='app_private_port')
+    app_port: int = Field(validation_alias='app_private_port')
     app_host: IPvAnyAddress = Field(validation_alias='app_host')
 
 
@@ -43,7 +43,7 @@ class ServicesSettings(BaseModel):
 
 class AppSettings(BaseModel):
     """Application settings."""
-    port: str
+    port: int
     host: IPvAnyAddress
 
 
