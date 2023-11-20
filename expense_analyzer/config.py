@@ -38,7 +38,8 @@ class ServicesSettings(BaseModel):
 
     For example: redis, postgres, etc
     """
-    postgres_dsn: PostgresDsn
+    async_postgres_dsn: PostgresDsn
+    sync_postgres_dsn: PostgresDsn
 
 
 class AppSettings(BaseModel):
@@ -49,8 +50,14 @@ class AppSettings(BaseModel):
 
 env_settings = EnvSettings()
 services_settings = ServicesSettings(
-    postgres_dsn=f'postgres://{env_settings.postgres_user}@{env_settings.db_host}:{env_settings.postgres_port}/'
-                 f'{env_settings.db_name}',
+    async_postgres_dsn=f'postgresql+asyncpg://{env_settings.postgres_user}:'
+                       f'{env_settings.postgres_password.get_secret_value()}@'
+                       f'{env_settings.db_host}:{env_settings.postgres_port}/'
+                       f'{env_settings.db_name}',
+    sync_postgres_dsn=f'postgresql+psycopg2://{env_settings.postgres_user}:'
+                      f'{env_settings.postgres_password.get_secret_value()}@'
+                       f'{env_settings.db_host}:{env_settings.postgres_port}/'
+                       f'{env_settings.db_name}',
 )
 app_setting = AppSettings(
     port=env_settings.app_port,
