@@ -29,9 +29,6 @@ jobs:
     - name: Install dependencies
       run: |
         /home/runner/poetry/bin/poetry install --with dev
-    - name: Set environment variables
-      run: |
-        set -a && source ./docker/.env.example && set +a
     - name: Test with pytest
       run: |
          set -a && source ./docker/.env.example && set +a && /home/runner/poetry/bin/poetry run pytest
