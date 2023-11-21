@@ -8,9 +8,11 @@ RUN pip install --upgrade pip
 
 RUN pip install -U poetry
 
-COPY ./expense_analyzer ./
+COPY . .
 
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-dev
+
+RUN cd expense_analyzer
 
 CMD ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
