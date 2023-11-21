@@ -29,6 +29,9 @@ jobs:
     - name: Install dependencies
       run: |
         /home/runner/poetry/bin/poetry install --with dev
+    - name: Activate poetry environment
+      run: |
+        /home/runner/poetry/bin/poetry shell
     - name: Set environment variables
       run: |
         set -a && source ./docker/.env.example && set +a
