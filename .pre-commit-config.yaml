@@ -26,6 +26,7 @@ repos:
        args: [
            "--max-line-length=120",
            "--max-complexity=10",
+           "--exclude=./expense_analyzer/alembic/*"
        ]
  - repo: https://github.com/PyCQA/docformatter
    rev: v1.7.5

@@ -31,4 +31,4 @@ jobs:
         /home/runner/poetry/bin/poetry install --with dev
     - name: Test with pytest
       run: |
-         /home/runner/poetry/bin/poetry run pytest
+         set -a && source ./docker/.env.example && set +a && /home/runner/poetry/bin/poetry run pytest
