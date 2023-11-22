@@ -5,6 +5,7 @@ from sqlalchemy import engine_from_config, pool
 
 from expense_analyzer.config import services_settings
 from expense_analyzer.constants import DbConstants
+from expense_analyzer.models import *
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
