@@ -23,6 +23,7 @@ async def root():
 async def run_server():
     """
     TODO: Place the code for running the server
+    FIXME: api Docker files can't run the application
     :return: None
     """
     async_session = async_sessionmaker(DbConstants.ENGINE, expire_on_commit=False)
