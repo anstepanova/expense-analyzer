@@ -35,3 +35,6 @@ build-backend = "poetry.core.masonry.api"
 exclude_dirs = ["tests"]
 tests = ["B201", "B301"]
 skips = ["B101", "B601"]
+
+[tool.isort]
+multi_line_output = 3

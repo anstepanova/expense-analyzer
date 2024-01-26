@@ -1,9 +1,13 @@
 from fastapi import APIRouter
 
-from expense_analyzer.constants import (RouterPrefixConstants,
-                                        RouterTagConstants)
-from expense_analyzer.routers.type_annotations import (ItemIdDependency,
-                                                       PaginationDependency)
+from expense_analyzer.constants import (
+    RouterPrefixConstants,
+    RouterTagConstants
+)
+from expense_analyzer.routers.type_annotations import (
+    ItemIdDependency,
+    PaginationDependency
+)
 
 currency_router = APIRouter(
     tags=RouterTagConstants.CURRENCY_TAGS,
