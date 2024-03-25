@@ -7,8 +7,11 @@ from sqlalchemy.ext.asyncio import async_sessionmaker
 
 from expense_analyzer.config import app_setting
 from expense_analyzer.constants import DbConstants
+from expense_analyzer.routers.v1.url_patterns import v1_router
 
 app = FastAPI()
+
+app.include_router(v1_router)
 
 
 @app.get("/")
